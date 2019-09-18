@@ -1,0 +1,15 @@
+{
+  "name": "off-screen-nav-with_focus-within",
+  "version": "1.0.0",
+  "description": "slide-in menu example for compentency aquisition",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "sass": "node-sass --watch sass/ --output dist/styles/ --recursive"
+  },
+  "author": "bryant vail",
+  "license": "ISC"
+}
