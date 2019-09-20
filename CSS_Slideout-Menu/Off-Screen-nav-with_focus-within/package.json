@@ -4,6 +4,7 @@
   "description": "slide-in menu example for compentency aquisition",
   "main": "index.js",
   "dependencies": {
+    "jslint": "^0.12.1",
     "node-sass": "^4.12.0"
   },
   "devDependencies": {},

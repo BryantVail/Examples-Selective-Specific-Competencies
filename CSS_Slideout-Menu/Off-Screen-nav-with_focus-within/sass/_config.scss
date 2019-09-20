@@ -1,0 +1,54 @@
+//_config.scss
+
+* {
+  outline: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img {
+  vertical-align: middle;
+  height: auto;
+  width: 100%;
+}
+
+//
+//headers
+//
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+//
+//lists
+//
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+//
+//links
+//
+a {
+  color: currentColor;
+  transition: 0.2s ease-in-out;
+}
+
+a,
+a:visited,
+a:focus,
+a:active,
+a:link {
+  text-decoration: none;
+  outline: 0;
+}
