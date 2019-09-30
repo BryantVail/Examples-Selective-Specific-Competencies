@@ -1,0 +1,56 @@
+//_config.scss
+
+//
+//Variables
+//
+$red: random(256)-1;
+$green: random(256)-1;
+$blue: random(256)-1;
+
+$main: rgb($red, $green, $blue);
+$main: #0070cc;
+$dark: mix(black, $main, 20%);
+
+//
+//font-color
+//
+
+// function getColor()
+$text: getFontColor($main);
+
+//
+//mixins
+//
+
+@mixin transition-max-height {
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      transition: max-height 0.5s #{0.65 + $i * 0.02}s ease-in;
+    }
+  }
+}
+
+//media queries
+@mixin media-sm {
+  @media (min-width: 650px) {
+    @content;
+  }
+}
+
+@mixin alpha-attribute($attribute, $color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  #{$attribute}: $solid-color;
+  #{$attribute}: $color;
+}
+
+//functions
+
+@function getFontColor($color) {
+  @if (lightness($color) > 50) {
+    @return rgba(black, 0.8);
+  } @else {
+    @return rgba(white, 0.8);
+  }
+}

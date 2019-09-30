@@ -1,0 +1,18 @@
+{
+  "name": "transparency-design_scss_left-side-icons",
+  "version": "1.0.0",
+  "description": "tutorial: https://codepen.io/bradyhullopeter/pen/mRPQQy",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass --watch scss/ --output dist/css/ --recursive"
+  },
+  "keywords": [
+    "slideout-menu",
+    "side-nav"
+  ],
+  "author": "bryant vail",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

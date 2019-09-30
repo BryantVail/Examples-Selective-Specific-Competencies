@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  font-family: "Roboto", sans-serif; }
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.primnav {
+  position: fixed;
+  height: 58px;
+  width: 100vw;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  background-color: #007ee6;
+  display: flex;
+  flex-direction: column;
+  transition: height 246ms 0.5s ease;
+  padding-top: 58px;
+  overflow-x: hidden;
+  z-index: 1; }
+  .primnav > ul {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden; }
+  @media (min-width: 650px) {
+    .primnav {
+      height: 100vh;
+      width: 58px;
+      transition: width 246ms 0.5s ease; } }
