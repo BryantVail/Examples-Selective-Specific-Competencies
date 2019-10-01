@@ -1,5 +1,15 @@
 //_config.scss
 
+//functions
+
+@function getFontColor($color) {
+  @if (lightness($color) > 50) {
+    @return rgba(black, 0.8);
+  } @else {
+    @return rgba(white, 0.8);
+  }
+}
+
 //
 //Variables
 //
@@ -43,14 +53,4 @@ $text: getFontColor($main);
   $solid-color: mix($opaque, $background, $percent);
   #{$attribute}: $solid-color;
   #{$attribute}: $color;
-}
-
-//functions
-
-@function getFontColor($color) {
-  @if (lightness($color) > 50) {
-    @return rgba(black, 0.8);
-  } @else {
-    @return rgba(white, 0.8);
-  }
 }
