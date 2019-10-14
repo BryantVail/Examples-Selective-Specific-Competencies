@@ -226,9 +226,11 @@ body {
 
 $hamburger: $text;
 
-/* hamburger */
+/* hamburger icon */
 input.hamburger {
   display: none;
+
+  //checked
   &:checked {
     & ~ nav.primnav {
       height: 100vh;

@@ -14,6 +14,10 @@ body {
 ul {
   list-style: none; }
 
+a {
+  text-decoration: none;
+  color: inherit; }
+
 .primnav li:hover, .primnav #icon-expand:hover {
   background-color: #66a9e0;
   background-color: rgba(0, 112, 204, 0.6); }
@@ -180,7 +184,7 @@ body {
   stroke: currentColor;
   fill: currentColor; }
 
-/* hamburger */
+/* hamburger icon */
 input.hamburger {
   display: none; }
   input.hamburger:checked ~ nav.primnav {
