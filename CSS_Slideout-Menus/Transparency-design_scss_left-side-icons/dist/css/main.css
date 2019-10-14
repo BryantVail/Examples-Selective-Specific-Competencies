@@ -215,7 +215,7 @@ input.hamburger {
     background-color: transparent;
     transform: rotate(90deg); }
     input.hamburger:checked ~ label > i:before {
-      transform: translate(-50%, -50%) rotate(-45deg); }
+      transform: translate(-50%, -50%) rotate(45deg); }
     input.hamburger:checked ~ label > i:after {
       transform: translate(-50%, -50%) rotate(-45deg); }
   input.hamburger:checked ~ label .close {

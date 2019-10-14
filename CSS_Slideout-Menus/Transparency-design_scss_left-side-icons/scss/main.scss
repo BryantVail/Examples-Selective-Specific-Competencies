@@ -242,14 +242,15 @@ input.hamburger {
           max-height: 100px;
         }
       }
-    } // end input.hamburger:checked~ nav.primnav
+    } // end input.hamburger:checked ~ nav.primnav
 
+    //input.hamburger ~ label
     & ~ label {
       > i {
         background-color: transparent;
         transform: rotate(90deg);
         &:before {
-          transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
         }
         &:after {
           transform: translate(-50%, -50%) rotate(-45deg);
