@@ -18,7 +18,7 @@ $green: random(256)-1;
 $blue: random(256)-1;
 
 $main: rgb($red, $green, $blue);
-$main: #0070cc;
+$main: rgb(0, 64, 127);
 $dark: mix(black, $main, 20%);
 
 //

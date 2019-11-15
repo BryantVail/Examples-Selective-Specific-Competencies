@@ -7,240 +7,23 @@
   @include alpha-attribute("background-color", rgba($main, 0.6), white);
 }
 
-//primary navigation
-.primnav {
-  //display & position
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  height: 58px;
-  width: 100vw;
-  background-color: lighten($main, 5%);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  // transition
-  transition: height 246ms 0.5s ease;
-  padding-top: 58px;
-  overflow-x: hidden;
-  // overflow-y: hidden;
-  z-index: 1;
-
-  // .primnav > ul
-  > ul {
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-
-  // .primnav li
-  li {
-    position: relative;
-    font-weight: 400;
-
-    // .primnav li:hover
-    &:hover {
-      @extend %sidebar-hover;
-    }
-
-    // .primnav li .tag
-    //    -badge icon with number
-    .tag {
-      color: $text;
-      padding: 0 0.5rem;
-      margin-left: auto;
-      margin-right: 0.75rem;
-      border-radius: 2rem;
-      @include alpha-attribute("background-color", rgba($main, 0.8), black);
-      @include alpha-attribute("color", rgba($text, 0.9), black);
-    }
-
-    // .primnav li a
-    a {
-      position: relative;
-      display: flex;
-      align-items: center;
-      white-space: nowrap;
-      @include alpha-attribute("color", rgba($text, 0.8), white);
-      text-decoration: none;
-    }
-  } //end .primnav li
-
-  // .primnav {...} .icon
-  .icon {
-    // height: 50px;
-    flex-shrink: 0;
-    width: 50px;
-    padding: 4px;
-    padding-left: 16px;
-    // padding-bottom: 15px;
-    margin-right: 22px;
-    text-align: center;
-    @include alpha-attribute("color", rgba($text, 0.9), black);
-  }
-
-  #icon-expand:hover {
-    @extend %sidebar-hover;
-  }
-
-  //media queries
-  @include media-sm {
-    height: 100vh;
-    width: 58px;
-    transition: width 246ms 0.5s ease;
-  }
-} //end body.primnav
-
-.topnav {
-  margin-left: 63px;
-  border-left: 1px solid black;
-  overflow: hidden;
-  @include alpha-attribute("border-left-color", rgba($main, 0.9), black);
-
-  // body .topnav li
-  li {
-    max-height: 100px;
-    transition: max-height 0.1s;
-    @include alpha-attribute("color", rgba($text, 0.9), black);
-
-    @include media-sm {
-      max-height: 0px;
-      transition: max-height 0.5s 0.5s;
-    }
-
-    // .topnav li a
-    a {
-      text-transform: initial;
-      display: block;
-      color: inherit;
-      padding: 0.75rem 10px;
-    }
-  }
-} //end topnav
-
-.user {
-  flex-shrink: 0;
-  position: fixed;
-  padding: 5px;
-  padding-bottom: 3px;
-  font-weight: 400;
-  right: 0;
-  @include alpha-attribute("color", rgba($text, 0.9), white);
-  z-index: 9999; //top
-
-  //user > section
-  > section {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    > section {
-      display: flex;
-      flex-direction: column;
-      white-space: nowrap;
-    }
-  }
-
-  img {
-    height: 51px;
-    width: 48px;
-    clip-path: circle(50% at 50% 50%);
-    margin-left: 10px;
-    min-height: 51px;
-    min-width: 48px;
-    align-items: flex-end;
-  }
-
-  .name {
-    font-weight: 400;
-  }
-
-  .actions {
-    padding: 0.1rem 0;
-    font-size: 0.8rem;
-    display: flex;
-    justify-content: flex-end;
-
-    a {
-      padding: 0 0.5rem;
-      color: $text;
-      text-decoration: none;
-
-      &:last-child {
-        padding-right: 0;
-      }
-    }
-  }
-}
-
-//content
-//    body main.content
-main.content {
-  font-family: "pacifico", cursive;
-  color: rgba($text, 0.9);
-  font-size: 8vw;
-  letter-spacing: 1px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: $main;
-  height: 100%;
-  padding-top: 58px;
-  position: relative;
-  @include media-sm {
-    padding-left: 58px;
-    padding-top: 0;
-  }
-}
-
-.features {
-  font-family: "lato", sans-serif;
-  font-size: 1rem;
-  text-transform: uppercase;
-  li {
-    width: 100%;
-    text-align: center;
-    padding: 0.25rem;
-  }
-}
-
-/*
-  SCROLLBAR STYLE FOR IE
-*/
-body {
-  scrollbar-base-color: $main;
-  scrollbar-3dlight-color: #fff;
-  scrollbar-highlight-color: $main;
-  scrollbar-track-color: $main;
-  scrollbar-arrow-color: $main;
-  scrollbar-shadow-color: $main;
-  scrollbar-dark-shadow-color: $main;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
-.icon {
-  display: inline-block;
-  width: 5vw;
-  height: 4vw;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-}
-
 $hamburger: $text;
 
 /* hamburger icon */
 input.hamburger {
+  //removes the checkbox from view
   display: none;
 
   //checked
   &:checked {
+    //sibling nav.primnav
     & ~ nav.primnav {
       height: 100vh;
       @include media-sm {
         width: 275px;
       }
 
-      .topnav > li {
+      .sub-list > li {
         @include media-sm {
           @include transition-max-height;
           max-height: 100px;
@@ -249,13 +32,18 @@ input.hamburger {
     } // end input.hamburger:checked ~ nav.primnav
 
     //input.hamburger ~ label
+    // sibling of the input.hamburger:checked
     & ~ label {
       > i {
         background-color: transparent;
         transform: rotate(90deg);
+
+        //top line for the ||| hamberger menu
         &:before {
           transform: translate(-50%, -50%) rotate(45deg);
         }
+
+        // bottom line for the ||| hamberger menu
         &:after {
           transform: translate(-50%, -50%) rotate(-45deg);
         }
@@ -270,7 +58,7 @@ input.hamburger {
         color: rgba(0, 0, 0, 0);
         width: 0;
       }
-    }
+    } //end input.hamburger ~ label;
   }
 } //end input.hamburger
 
@@ -340,8 +128,231 @@ label.hamburger {
 
 label.hamburger {
   position: fixed;
-  top: 14px;
+  top: 72px;
   left: 17px;
+}
+
+//primary navigation
+.primnav {
+  //display & position
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 58px;
+  // height: 200px;
+  // width: 100vw;
+
+  background-color: lighten($main, 5%);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  // transition
+  transition: height 246ms 0.5s ease;
+  padding-top: 58px;
+  overflow-x: hidden;
+  // overflow-y: hidden;
+  z-index: 1;
+
+  // .primnav > ul
+  > ul {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  // .primnav li
+  li {
+    position: relative;
+    font-weight: 400;
+
+    // .primnav li:hover
+    &:hover {
+      @extend %sidebar-hover;
+    }
+
+    // .primnav li .tag
+    //    -badge icon with number
+    .tag {
+      color: $text;
+      padding: 0 0.5rem;
+      margin-left: auto;
+      margin-right: 0.75rem;
+      border-radius: 2rem;
+      @include alpha-attribute("background-color", rgba($main, 0.8), black);
+      @include alpha-attribute("color", rgba($text, 0.9), black);
+    }
+
+    // .primnav li a
+    a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      @include alpha-attribute("color", rgba($text, 0.8), white);
+    }
+  } //end .primnav li
+
+  // .primnav {...} .icon
+  .icon {
+    // height: 50px;
+    flex-shrink: 0;
+    width: 50px;
+    padding: 4px;
+    padding-left: 16px;
+    // padding-bottom: 15px;
+    margin-right: 22px;
+    text-align: center;
+    @include alpha-attribute("color", rgba($text, 0.9), black);
+  }
+
+  //svg or the 'symbol' tag
+  #icon-expand:hover {
+    @extend %sidebar-hover;
+  }
+
+  //media queries
+  @include media-sm {
+    height: 100vh;
+    width: 58px;
+    transition: width 246ms 0.5s ease;
+  }
+} //end body.primnav
+
+.sub-list {
+  margin-left: 63px;
+  //light border to indent 'sub-list'
+  border-left: 1px solid black;
+  overflow: hidden;
+  @include alpha-attribute("border-left-color", rgba($main, 0.9), black);
+
+  // body .sub-list li
+  li {
+    max-height: 100px;
+    transition: max-height 0.1s;
+    @include alpha-attribute("color", rgba($text, 0.9), black);
+
+    @include media-sm {
+      max-height: 0px;
+      transition: max-height 0.5s 0.5s;
+    }
+
+    // .sub-list li a
+    a {
+      text-transform: initial;
+      display: block;
+      color: inherit;
+      padding: 0.75rem 10px;
+    }
+  }
+} //end sub-list
+
+.user {
+  flex-shrink: 0;
+  position: fixed;
+  padding: 5px;
+  padding-bottom: 3px;
+  font-weight: 400;
+  right: 0;
+  @include alpha-attribute("color", rgba($text, 0.9), white);
+  z-index: 9999; //top
+
+  //user > section
+  > section {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    > section {
+      display: flex;
+      flex-direction: column;
+      white-space: nowrap;
+    }
+  }
+
+  img {
+    height: 51px;
+    width: 48px;
+    clip-path: circle(50% at 50% 50%);
+    margin-left: 10px;
+    min-height: 51px;
+    min-width: 48px;
+    align-items: flex-end;
+  }
+
+  .name {
+    font-weight: 400;
+  }
+
+  .actions {
+    padding: 0.1rem 0;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      padding: 0 0.5rem;
+      color: $text;
+      text-decoration: none;
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  } //end user > actions
+} //end 'user' (top right in example)
+
+//content
+//    body main.content
+main.content {
+  font-family: "pacifico", cursive;
+  color: rgba($text, 0.9);
+  font-size: 8vw;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $main;
+  height: 100%;
+  padding-top: 58px;
+  position: relative;
+  @include media-sm {
+    padding-left: 58px;
+    padding-top: 0;
+  }
+}
+
+//main-content icons (in Transparency example)
+.features {
+  font-family: "lato", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  li {
+    width: 100%;
+    text-align: center;
+    padding: 0.25rem;
+  }
+}
+
+/*
+  SCROLLBAR STYLE FOR IE
+*/
+body {
+  scrollbar-base-color: $main;
+  scrollbar-3dlight-color: #fff;
+  scrollbar-highlight-color: $main;
+  scrollbar-track-color: $main;
+  scrollbar-arrow-color: $main;
+  scrollbar-shadow-color: $main;
+  scrollbar-dark-shadow-color: $main;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.icon {
+  display: inline-block;
+  width: 5vw;
+  height: 4vw;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }
 
 .tabs {
