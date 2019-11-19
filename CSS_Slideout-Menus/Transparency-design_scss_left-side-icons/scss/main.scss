@@ -105,6 +105,7 @@ label.hamburger {
     transition-delay: 0.35s;
     &:before,
     &:after {
+      // 'content' is required
       content: "";
       position: absolute;
       display: block;
@@ -362,9 +363,11 @@ body {
   position: fixed;
   top: 58px;
   left: 0;
-  background-color: lighten($main, 5%);
+  // background-color: lighten($main, 5%);
+  background-color: #f4f4f4;
   border-bottom: 1px solid darken($main, 5%);
   width: 100vw;
+  z-index: 99999;
 
   @include media-sm {
     padding-left: calc(58px + 0.5rem);

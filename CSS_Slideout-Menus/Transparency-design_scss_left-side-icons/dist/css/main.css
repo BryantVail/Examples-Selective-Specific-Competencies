@@ -290,9 +290,10 @@ body {
   position: fixed;
   top: 58px;
   left: 0;
-  background-color: #004d99;
+  background-color: #f4f4f4;
   border-bottom: 1px solid #003366;
-  width: 100vw; }
+  width: 100vw;
+  z-index: 99999; }
   @media (min-width: 650px) {
     .tabs {
       padding-left: calc(58px + 0.5rem);
