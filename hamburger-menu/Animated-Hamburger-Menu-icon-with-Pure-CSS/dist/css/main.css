@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+  border: none;
+  vertical-align: baseline;
+  line-height: 1; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer; }
+
+#sidebarMenu {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  width: 250px;
+  margin-top: 60px;
+  transform: translateX(-210px);
+  transition: transform 250ms ease-in-out;
+  background: linear-gradient(180deg, #fc466b 0%, #3f5efb 100%); }
+  #sidebarMenu .sidebarMenuInner {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    #sidebarMenu .sidebarMenuInner li {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 20px;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+      #sidebarMenu .sidebarMenuInner li a {
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none; }
+      #sidebarMenu .sidebarMenuInner li span {
+        display: block;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.1); }
+
+input[type=checkbox]:checked ~ #sidebarMenu {
+  transform: translateX(0); }
+
+input[type=checkbox] {
+  transition: all .3s;
+  display: none; }
+
+.sidebarIconToggle {
+  transition: all .3s;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  height: 100%;
+  width: 100%;
+  top: 22px;
+  left: 15px;
+  height: 22px;
+  width: 22px; }
+
+.spinner {
+  transition: all .3s;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #fff; }
+
+.horizontal {
+  transition: all .3s;
+  position: relative;
+  margin-top: 3px; }
+
+.diagonal-part1 {
+  position: relative;
+  transition: all .3s; }
+
+.diagonal-part2 {
+  transition: all .3s;
+  position: relative;
+  margin-top: 3px; }
+
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+  transition: all .3s;
+  opacity: 0; }
+
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal-part1 {
+  transition: all .3s;
+  transform: rotate(135deg);
+  margin-top: 8px; }
+
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal-part2 {
+  transition: all .3s;
+  transform: rotate(-135deg);
+  margin-top: -9px; }
+
+body {
+  background: #333; }
