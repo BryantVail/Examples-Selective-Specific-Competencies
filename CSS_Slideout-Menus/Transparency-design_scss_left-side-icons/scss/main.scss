@@ -1,3 +1,5 @@
+// main.scss
+
 @import "clear";
 @import "config";
 
@@ -7,41 +9,52 @@
 
 //primary navigation
 .primnav {
+  //display & position
+  display: flex;
+  flex-direction: column;
   position: fixed;
   height: 58px;
   width: 100vw;
+  background-color: lighten($main, 5%);
   font-size: 0.8rem;
   text-transform: uppercase;
-  background-color: lighten($main, 5%);
-  display: flex;
-  flex-direction: column;
+  // transition
   transition: height 246ms 0.5s ease;
   padding-top: 58px;
   overflow-x: hidden;
   // overflow-y: hidden;
   z-index: 1;
 
+  // .primnav > ul
   > ul {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
   }
 
+  // .primnav li
   li {
-    font-weight: 400;
     position: relative;
+    font-weight: 400;
+
+    // .primnav li:hover
     &:hover {
       @extend %sidebar-hover;
     }
+
+    // .primnav li .tag
+    //    -badge icon with number
     .tag {
-      @include alpha-attribute("background-color", rgba($main, 0.8), black);
       color: $text;
-      @include alpha-attribute("color", rgba($text, 0.9), black);
       padding: 0 0.5rem;
-      border-radius: 2rem;
       margin-left: auto;
       margin-right: 0.75rem;
+      border-radius: 2rem;
+      @include alpha-attribute("background-color", rgba($main, 0.8), black);
+      @include alpha-attribute("color", rgba($text, 0.9), black);
     }
+
+    // .primnav li a
     a {
       position: relative;
       display: flex;
@@ -52,17 +65,23 @@
     }
   } //end .primnav li
 
+  // .primnav {...} .icon
   .icon {
-    height: 20px;
+    // height: 50px;
     flex-shrink: 0;
-    width: 20px;
-    padding: 19px 19px 15px 19px;
-    margin-right: 5px;
+    width: 50px;
+    padding: 4px;
+    padding-left: 16px;
+    // padding-bottom: 15px;
+    margin-right: 22px;
+    text-align: center;
     @include alpha-attribute("color", rgba($text, 0.9), black);
   }
-  .icon-expand:hover {
+
+  #icon-expand:hover {
     @extend %sidebar-hover;
   }
+
   //media queries
   @include media-sm {
     height: 100vh;
@@ -74,19 +93,21 @@
 .topnav {
   margin-left: 63px;
   border-left: 1px solid black;
-  @include alpha-attribute("border-left-color", rgba($main, 0.9), black);
   overflow: hidden;
+  @include alpha-attribute("border-left-color", rgba($main, 0.9), black);
 
+  // body .topnav li
   li {
-    @include alpha-attribute("color", rgba($text, 0.9), black);
     max-height: 100px;
     transition: max-height 0.1s;
+    @include alpha-attribute("color", rgba($text, 0.9), black);
 
     @include media-sm {
       max-height: 0px;
       transition: max-height 0.5s 0.5s;
     }
 
+    // .topnav li a
     a {
       text-transform: initial;
       display: block;
@@ -96,11 +117,11 @@
   }
 } //end topnav
 
-user {
-  padding: 5px;
-  padding-bottom: 3px;
+.user {
   flex-shrink: 0;
   position: fixed;
+  padding: 5px;
+  padding-bottom: 3px;
   font-weight: 400;
   right: 0;
   @include alpha-attribute("color", rgba($text, 0.9), white);
@@ -151,7 +172,8 @@ user {
 }
 
 //content
-section.content {
+//    body main.content
+main.content {
   font-family: "pacifico", cursive;
   color: rgba($text, 0.9);
   font-size: 8vw;
@@ -206,9 +228,11 @@ body {
 
 $hamburger: $text;
 
-/* hamburger */
+/* hamburger icon */
 input.hamburger {
   display: none;
+
+  //checked
   &:checked {
     & ~ nav.primnav {
       height: 100vh;
@@ -222,14 +246,15 @@ input.hamburger {
           max-height: 100px;
         }
       }
-    } // end input.hamburger:checked~ nav.primnav
+    } // end input.hamburger:checked ~ nav.primnav
 
+    //input.hamburger ~ label
     & ~ label {
       > i {
         background-color: transparent;
         transform: rotate(90deg);
         &:before {
-          transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
         }
         &:after {
           transform: translate(-50%, -50%) rotate(-45deg);
@@ -259,9 +284,9 @@ label.hamburger {
     cursor: pointer;
   }
 
-  text {
-    close,
-    open {
+  .menu-icon-text {
+    .close,
+    .open {
       text-transform: uppercase;
       text-align: center;
       position: absolute;
@@ -303,9 +328,11 @@ label.hamburger {
       transform-origin: 50% 50%;
     }
     &:before {
+      content: "";
       transform: translate(-50%, -7px);
     }
     &:after {
+      content: "";
       transform: translate(-50%, 7px);
     }
   }
