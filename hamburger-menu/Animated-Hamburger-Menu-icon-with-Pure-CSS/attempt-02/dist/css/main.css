@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+  border: none;
+  vertical-align: baseline;
+  line-height: 1; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer; }
+
+ul, li {
+  list-style: none; }
+
+#sidebarMenu {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  width: 250px;
+  margin-top: 60px;
+  transform: translateX(-250px);
+  transition: transform 250ms ease-in-out;
+  background: linear-gradient(180deg, #333333 0%, navy 100%); }
+  #sidebarMenu .sidebarMenuInner {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    #sidebarMenu .sidebarMenuInner li:nth-child(1) {
+      padding: 20px; }
+    #sidebarMenu .sidebarMenuInner li {
+      color: #fff;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+      #sidebarMenu .sidebarMenuInner li a {
+        color: #fff;
+        font-weight: bold;
+        display: block;
+        padding: 20px; }
+      #sidebarMenu .sidebarMenuInner li span {
+        display: block;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.5); }
+
+input#openSidebarMenu[type=checkbox] {
+  transition: all .3s;
+  display: none; }
+  input#openSidebarMenu[type=checkbox]:checked ~ .sidebarIconToggle .horizontal {
+    transition: all .3s;
+    opacity: 0; }
+  input#openSidebarMenu[type=checkbox]:checked ~ .sidebarIconToggle .diagonal.part-1 {
+    transition: all .3s;
+    transform: rotate(135deg);
+    margin-top: 8px; }
+  input#openSidebarMenu[type=checkbox]:checked ~ .sidebarIconToggle .diagonal.part-2 {
+    transition: all .3s;
+    transform: rotate(-135deg);
+    margin-top: -9px; }
+  input#openSidebarMenu[type=checkbox]:checked ~ #sidebarMenu {
+    transform: translateX(0); }
+
+.sidebarIconToggle {
+  transition: all .3s;
+  position: absolute;
+  z-index: 99;
+  top: 22px;
+  left: 15px;
+  height: 22px;
+  width: 22px;
+  cursor: pointer; }
+  .sidebarIconToggle .spinner {
+    transition: all .3s;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff; }
+  .sidebarIconToggle .horizontal {
+    transition: all .3s;
+    position: relative;
+    float: left;
+    margin-top: 3px; }
+  .sidebarIconToggle .diagonal.part-1 {
+    transition: all .3s;
+    position: relative;
+    float: left; }
+  .sidebarIconToggle .diagonal.part-2 {
+    transition: all .3s;
+    position: relative;
+    float: left;
+    margin-top: 3px; }
+
+body {
+  background: #333; }
+
+* {
+  font-family: Arial, Helvetica, sans-serif; }

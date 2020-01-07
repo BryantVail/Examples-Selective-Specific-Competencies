@@ -25,11 +25,12 @@ a {
     margin: 0;
     padding: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    #sidebarMenu .sidebarMenuInner li:nth-child(1) {
+      padding: 20px; }
     #sidebarMenu .sidebarMenuInner li {
       color: #fff;
       text-transform: uppercase;
       font-weight: bold;
-      padding: 20px;
       cursor: pointer;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
       #sidebarMenu .sidebarMenuInner li a {
@@ -37,7 +38,9 @@ a {
         text-transform: uppercase;
         font-weight: bold;
         cursor: pointer;
-        text-decoration: none; }
+        text-decoration: none;
+        display: block;
+        padding: 20px; }
       #sidebarMenu .sidebarMenuInner li span {
         display: block;
         font-size: 14px;
@@ -63,37 +66,37 @@ input[type=checkbox] {
   width: 22px; }
 
 .spinner {
-  transition: all .3s;
+  transition: all 5s;
   position: absolute;
   height: 3px;
   width: 100%;
   background: #fff; }
 
 .horizontal {
-  transition: all .3s;
+  transition: all 5s;
   position: relative;
   margin-top: 3px; }
 
 .diagonal-part1 {
   position: relative;
-  transition: all .3s; }
+  transition: all 5s; }
 
 .diagonal-part2 {
-  transition: all .3s;
+  transition: all 5s;
   position: relative;
   margin-top: 3px; }
 
 input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
-  transition: all .3s;
+  transition: all 5s;
   opacity: 0; }
 
 input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal-part1 {
-  transition: all .3s;
+  transition: all 5s;
   transform: rotate(135deg);
   margin-top: 8px; }
 
 input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal-part2 {
-  transition: all .3s;
+  transition: all 5s;
   transform: rotate(-135deg);
   margin-top: -9px; }
 

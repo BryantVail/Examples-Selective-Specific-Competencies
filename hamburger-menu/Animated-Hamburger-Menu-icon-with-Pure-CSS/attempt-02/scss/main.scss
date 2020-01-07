@@ -1,9 +1,10 @@
-//main.scss
 @import "clear.scss";
 @import "sidebarMenu.scss";
-
 
 body{
   background: #333;
 }
 
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}

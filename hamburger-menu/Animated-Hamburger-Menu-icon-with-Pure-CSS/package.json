@@ -4,7 +4,8 @@
   "description": "https://w3bits.com/animated-menu-icon-css",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass --watch scss/ --output dist/css/ --recursive"
+    "sass": "node-sass --watch scss/ --output dist/css/ --recursive",
+    "sass2": "node-sass --watch attempt-02/scss/ --output attempt-02/dist/css/ --recursive"
   },
   "keywords": [
     "hamburger",
